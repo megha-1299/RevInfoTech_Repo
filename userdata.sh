@@ -1,9 +1,8 @@
 #!/bin/bash
-yum update -y
-amazon-linux-extras enable php8.0
-amazon-linux-extras install php8.0 -y
-yum install -y httpd
-systemctl start httpd
-systemctl enable httpd
+sudo apt update -y
+sudo apt install apache2 php libapache2-mod-php -y
 echo "<?php phpinfo(); ?>" > /var/www/html/index.php
+systemctl enable apache2
+systemctl start apache2
+
 
